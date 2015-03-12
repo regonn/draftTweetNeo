@@ -14,6 +14,7 @@
 		447358D01AB18DC800B4EF14 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 447358CF1AB18DC800B4EF14 /* Images.xcassets */; };
 		447358D31AB18DC800B4EF14 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 447358D11AB18DC800B4EF14 /* LaunchScreen.xib */; };
 		447358DF1AB18DC800B4EF14 /* draftTweetNeoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447358DE1AB18DC800B4EF14 /* draftTweetNeoTests.swift */; };
+		447358E91AB1905400B4EF14 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447358E81AB1905400B4EF14 /* Tweet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		447358D81AB18DC800B4EF14 /* draftTweetNeoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = draftTweetNeoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		447358DD1AB18DC800B4EF14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447358DE1AB18DC800B4EF14 /* draftTweetNeoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = draftTweetNeoTests.swift; sourceTree = "<group>"; };
+		447358E81AB1905400B4EF14 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				447358CF1AB18DC800B4EF14 /* Images.xcassets */,
 				447358D11AB18DC800B4EF14 /* LaunchScreen.xib */,
 				447358C71AB18DC800B4EF14 /* draftTweetNeo.xcdatamodeld */,
+				447358E81AB1905400B4EF14 /* Tweet.swift */,
 				447358C31AB18DC800B4EF14 /* Supporting Files */,
 			);
 			path = draftTweetNeo;
@@ -218,6 +221,7 @@
 				447358CB1AB18DC800B4EF14 /* ViewController.swift in Sources */,
 				447358C91AB18DC800B4EF14 /* draftTweetNeo.xcdatamodeld in Sources */,
 				447358C61AB18DC800B4EF14 /* AppDelegate.swift in Sources */,
+				447358E91AB1905400B4EF14 /* Tweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
