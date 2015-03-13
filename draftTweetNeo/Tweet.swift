@@ -9,9 +9,10 @@
 import Foundation
 import CoreData
 
+@objc(Tweet)
 class Tweet: NSManagedObject {
 
     @NSManaged var content: String
     @NSManaged var updatedAt: NSDate
-
+    @NSManaged var uId: String
 }
