@@ -9,18 +9,24 @@
 import UIKit
 import CoreData
 
-class TweetFormViewController: UIViewController {
+class TweetFormViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var inputTextForm: UITextView!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var countButton: UIButton!
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
     
     let tweetModel = TweetModel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        inputTextForm.delegate = self
+        if appDelegate.editingTweetObject != nil {
+            self.inputTextForm.text = appDelegate.editingTweetObject!.content
+            self.changeCounterValue(self.inputTextForm.text)
+        }
     }
     
     func changeCounterValue(counterValue: String){
@@ -38,7 +44,11 @@ class TweetFormViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender as? UIBarButtonItem == self.saveButton {
             if countElements(self.inputTextForm.text) > 0 {
-                tweetModel.insert(self.inputTextForm.text)
+                if appDelegate.editingTweetObject == nil {
+                    tweetModel.insert(self.inputTextForm.text)
+                }else{
+                    tweetModel.update(appDelegate.editingTweetObject!.uId, content: self.inputTextForm.text)
+                }
             }
         }
     }

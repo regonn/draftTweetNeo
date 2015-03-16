@@ -58,4 +58,26 @@ class TweetModel{
         }
         appDelegate.saveContext()
     }
+    
+    func update(uId: String, content: String){
+        let managedObjectContext = appDelegate.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Tweet", inManagedObjectContext: managedObjectContext)
+        appDelegate.saveContext()
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        let predicate = NSPredicate(format: "%K = %@", "uId", uId)
+        fetchRequest.predicate = predicate
+        
+        var error: NSError? = nil
+        if var results = managedObjectContext.executeFetchRequest(fetchRequest, error: &error){
+            for managedObject in results {
+                let tweet = managedObject as Tweet
+                println(tweet.content)
+                tweet.content = content
+                tweet.updatedAt = NSDate()
+                tweet.uId = uId
+            }
+        }
+        appDelegate.saveContext()
+    }
 }

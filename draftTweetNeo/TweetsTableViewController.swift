@@ -12,9 +12,11 @@ class TweetsTableViewController: UITableViewController {
     
     let tweetModel = TweetModel()
     var tweets = NSArray()
+    let appDelegate:AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        appDelegate.editingTweetObject = nil
     }
     
     func syncTweets(){
@@ -41,10 +43,14 @@ class TweetsTableViewController: UITableViewController {
         return cell
     }
     
-    
 
     @IBAction func unwindToList(segue: UIStoryboardSegue) {
         self.tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var cell = tableView.cellForRowAtIndexPath(indexPath) as TweetsTableViewCell
+        appDelegate.editingTweetObject = tweets.objectAtIndex(indexPath.row) as? TweetObject
     }
 
 }
