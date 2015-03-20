@@ -27,7 +27,7 @@ class TweetModel{
         println("tweet saved")
     }
     
-    func all()-> NSMutableArray{
+    func all()-> NSArray{
         println("fetch all")
         var tweets = NSMutableArray()
         let managedObjectContext = appDelegate.managedObjectContext!
@@ -42,7 +42,9 @@ class TweetModel{
             tweetObject.uId = managedObject.valueForKey("uId") as String
             tweets.addObject(tweetObject)
         }
-        return tweets
+        var descriptor: NSSortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false)
+        var sortedResults: NSArray = tweets.sortedArrayUsingDescriptors([descriptor])
+        return sortedResults
     }
     
     func deleteAll(){
@@ -76,6 +78,24 @@ class TweetModel{
                 tweet.content = content
                 tweet.updatedAt = NSDate()
                 tweet.uId = uId
+            }
+        }
+        appDelegate.saveContext()
+    }
+
+    func delete(uId: String){
+        let managedObjectContext = appDelegate.managedObjectContext!
+        let entity = NSEntityDescription.entityForName("Tweet", inManagedObjectContext: managedObjectContext)
+        appDelegate.saveContext()
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entity
+        let predicate = NSPredicate(format: "%K = %@", "uId", uId)
+        fetchRequest.predicate = predicate
+
+        var error: NSError? = nil
+        if var results = managedObjectContext.executeFetchRequest(fetchRequest, error: &error){
+            for managedObject in results {
+                managedObjectContext.deleteObject(managedObject as NSManagedObject)
             }
         }
         appDelegate.saveContext()

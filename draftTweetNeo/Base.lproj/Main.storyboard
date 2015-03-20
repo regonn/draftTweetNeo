@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H2F-Ly-OGb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H2F-Ly-OGb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -19,8 +19,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FKI-cP-cuA" id="e9f-Hj-vSz">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NU-Cu-luo">
-                                            <rect key="frame" x="13" y="19" width="574" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NU-Cu-luo">
+                                            <rect key="frame" x="13" y="8" width="574" height="44"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -30,6 +30,8 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="5NU-Cu-luo" secondAttribute="trailing" constant="5" id="N1s-cn-j9K"/>
                                         <constraint firstItem="5NU-Cu-luo" firstAttribute="leading" secondItem="e9f-Hj-vSz" secondAttribute="leadingMargin" constant="5" id="NVs-3o-j8C"/>
                                         <constraint firstAttribute="centerY" secondItem="5NU-Cu-luo" secondAttribute="centerY" id="bJu-1C-B33"/>
+                                        <constraint firstItem="5NU-Cu-luo" firstAttribute="top" secondItem="e9f-Hj-vSz" secondAttribute="topMargin" id="dby-fZ-BbH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5NU-Cu-luo" secondAttribute="bottom" id="qWu-ru-GZG"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -94,7 +96,7 @@
                         <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="R2S-kG-tbg">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="0">
+                            <state key="normal" title="140">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
@@ -116,6 +118,24 @@
                 <exit id="h5m-1y-Ifi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2882" y="766"/>
+        </scene>
+        <!--Show Buffer App Store Controller-->
+        <scene sceneID="6wY-ti-B1c">
+            <objects>
+                <viewController storyboardIdentifier="BufferAppStore" id="Oaf-ty-Mpv" customClass="ShowBufferAppStoreController" customModule="draftTweetNeo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Agh-AF-VYs"/>
+                        <viewControllerLayoutGuide type="bottom" id="LqX-2C-qNb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OGd-FM-SbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxM-Cl-Peu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="129"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tgd-4m-N0z">

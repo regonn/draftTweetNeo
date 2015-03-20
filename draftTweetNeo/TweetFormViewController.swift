@@ -27,6 +27,7 @@ class TweetFormViewController: UIViewController, UITextViewDelegate {
             self.inputTextForm.text = appDelegate.editingTweetObject!.content
             self.changeCounterValue(self.inputTextForm.text)
         }
+        self.inputTextForm.becomeFirstResponder()
     }
     
     func changeCounterValue(counterValue: String){
